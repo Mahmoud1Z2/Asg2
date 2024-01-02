@@ -6,27 +6,26 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+
 import android.widget.Button;
-import android.widget.ListView;
+
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
+
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
+
 
 public class Exchange extends AppCompatActivity {
 
@@ -55,42 +54,10 @@ public class Exchange extends AppCompatActivity {
             }
         });
     }
-    static String selectedItem="";
-    static String selectedItem2="";
     public void btn_OnClick(View view) {
 
-        String url = "https://v6.exchangerate-api.com/v6/";
-        String code = "65d0baf66b8c4ad6e718905b";
-        String after = "latest/USD";
         String fullUrl = "https://v6.exchangerate-api.com/v6/65d0baf66b8c4ad6e718905b/latest/USD";
-        spnF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                selectedItem = (String) parentView.getItemAtPosition(position);
 
-
-                Toast.makeText(Exchange.this, "Selected Item: " + selectedItem, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Do nothing here
-            }
-        });
-
-
-        spnTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-
-                selectedItem2 = (String) parentView.getItemAtPosition(position);
-
-                Toast.makeText(Exchange.this, "Selected Item2: " + selectedItem2, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Do nothing here
-            }
-        });
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, fullUrl,
                 null, new Response.Listener<JSONObject>()  {
             @Override

@@ -19,21 +19,11 @@
 
     <Button
         android:id="@+id/btnEx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="150dp"
-        android:background="#0F0259"
         android:text="Exchange Rates"
-        android:textColor="#F8F4F4" />
+        style="@style/btnchoose" />
 
     <Button
         android:id="@+id/btnCo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="#0F0259"
         android:text="Oil prices"
-        android:textColor="#F6F4F4" />
+        style="@style/btnchoose"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
